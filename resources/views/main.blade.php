@@ -1,0 +1,5 @@
+  @include('partials._header')
+  @include('partials._nav')
+  @include('inc.messages')
+  @include('partials._content')
+  @include('partials._scripts')
