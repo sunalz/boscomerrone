@@ -7,7 +7,7 @@
       $i = 1;
        ?>
       <div id="albums">
-        <div class="row text-center">
+        <div class="row text-center clear-fix">
           @foreach ($albums as $album)
             @if ($i == $colcount)
               <div class='medium-4 columns end'>
