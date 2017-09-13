@@ -15,14 +15,14 @@
              @foreach ($albums as $album)
                @if ($i == $colcount)
                  <div class='medium-4 columns end'>
-                   <a href="gallery/{{$album->id}}">
+                   <a href="{{$album->id}}">
                      <img style="width:300px; height:150px;" class="thumbnail" src="storage/album_covers/{{$album->cover_image}}" alt="{{$album->name}}">
                    </a>
                    <br>
                    <h4>{{$album->name}}</h4>
                    @else
                      <div class='medium-4 columns'>
-                       <a href="gallery/{{$album->id}}">
+                       <a href="{{$album->id}}">
                          <img style="width:300px; height:150px;" class="thumbnail" src="storage/album_covers/{{$album->cover_image}}" alt="{{$album->name}}">
                        </a>
                        <br>
