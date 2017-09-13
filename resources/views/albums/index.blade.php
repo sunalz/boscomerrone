@@ -6,38 +6,43 @@
       $colcount = count($albums);
       $i = 1;
        ?>
-      <div id="albums">
-        <div class="row text-center clear-fix">
-          @foreach ($albums as $album)
-            @if ($i == $colcount)
-              <div class='medium-4 columns end'>
-                <a href="gallery/{{$album->id}}">
-                  <img style="width:300px; height:150px;" class="thumbnail" src="storage/album_covers/{{$album->cover_image}}" alt="{{$album->name}}">
-                </a>
-                <br>
-                <h4>{{$album->name}}</h4>
-                @else
-                  <div class='medium-4 columns'>
-                    <a href="gallery/{{$album->id}}">
-                      <img style="width:300px; height:150px;" class="thumbnail" src="storage/album_covers/{{$album->cover_image}}" alt="{{$album->name}}">
-                    </a>
-                    <br>
-                    <h4>{{$album->name}}</h4>
-                  @endif
-                  @if ($i % 3 ==0)
-                  </div></div><div class="row text-center">
-                  @else
-                  </div>
+       <div class="col-md-3 float-left"></div>
+       	<div id="contactform" class="card border-primary mb-3 col-md-6" style="padding:10px; margin: 50px; box-shadow: 5px 10px 80px;">
+       	<h1 class="text-center" style="font-family: 'Coca cola ii', cursive; font-size: 60px; text-shadow: 1px 0px 20px;">Galleria!</h1>
+         <div id="albums" class="container">
 
-            @endif
-              <?php $i++; ?>
+           <div class="row text-center">
+             @foreach ($albums as $album)
+               @if ($i == $colcount)
+                 <div class='medium-4 columns end'>
+                   <a href="gallery/{{$album->id}}">
+                     <img style="width:300px; height:150px;" class="thumbnail" src="storage/album_covers/{{$album->cover_image}}" alt="{{$album->name}}">
+                   </a>
+                   <br>
+                   <h4>{{$album->name}}</h4>
+                   @else
+                     <div class='medium-4 columns'>
+                       <a href="gallery/{{$album->id}}">
+                         <img style="width:300px; height:150px;" class="thumbnail" src="storage/album_covers/{{$album->cover_image}}" alt="{{$album->name}}">
+                       </a>
+                       <br>
+                       <h4>{{$album->name}}</h4>
+                     @endif
+                     @if ($i % 3 ==0)
+                     </div></div><div class="row text-center">
+                     @else
+                     </div>
 
-          @endforeach
+               @endif
+                 <?php $i++; ?>
 
-        </div>
+             @endforeach
 
-      </div>
-    @else
-      <p>No Albums to Display</p>
-    @endif
+           </div>
+
+         </div>
+       @else
+         <p>No Albums to Display</p>
+       @endif
+       	</div>
 @endsection
