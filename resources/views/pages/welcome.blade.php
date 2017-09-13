@@ -31,7 +31,7 @@
             <br>
           </address>
           <address>
-          
+
             <label class="disabled" for="disabledTextInput">Cellulare: 339 4997878</label>
             <br>
             <a class="btn btn-primary" href="contact">Email Me</a>
@@ -79,7 +79,6 @@
         </div>
         </div>
         </div>
-      
+
       <!-- /.row -->
 @stop
-  

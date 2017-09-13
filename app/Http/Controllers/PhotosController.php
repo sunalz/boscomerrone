@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Photo;
 
 class PhotosController extends Controller
 {
@@ -20,6 +21,7 @@ class PhotosController extends Controller
 
       ]);
       $filenameWithExt = $request->file('photo')->getClientOriginalName();
+
       $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
 
       $extension = $request->file('photo')->getClientOriginalExtension();
@@ -30,7 +32,7 @@ class PhotosController extends Controller
 
       //upload photo
 
-      $photo = new Album;
+      $photo = new Photo;
       $photo->album_id = $request->input('album_id');
       $photo->title= $request->input('title');
       $photo->description= $request->input('description');
