@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Photo;
+use Illuminate\Support\Facades\Storage;
 
 class PhotosController extends Controller
 {
@@ -40,7 +41,27 @@ class PhotosController extends Controller
       $photo->photo= $filenameToStore;
 
       $photo->save();
-      return redirect('albums'.$request->input('album_id'))->with('success','Photo Uploaded!');
+      return redirect('/albums/'.$request->input('album_id'))->with('success','Photo Uploaded!');
+
+
+    }
+
+    public function show($id){
+
+      $photo = Photo::find($id);
+      return view('photos.show')->with('photo',$photo);
+
+    }
+    public function destroy($id){
+      $photos = Photo::find($id);
+      if(storage::delete('public/photos/'.$photos->album_id.'/'.$photos->photo)){
+        $photos->delete();
+
+
+        return redirect('/albums')->with('success','Photo Deleted');
+
+
+      }
 
 
     }

@@ -41,7 +41,7 @@ class AlbumsController extends Controller
      $album->cover_image= $filenameToStore;
 
      $album->save();
-     return redirect('/gallery')->with('success','Album created');
+     return redirect('/albums')->with('success','Album created');
 
 
    }
