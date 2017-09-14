@@ -26,8 +26,9 @@
           <h2 class="mt-4">Contattaci</h2>
           <address>
             <strong>Eventi in Campagna</strong>
-            <br>3481 Melrose Place
-            <br>Beverly Hills, CA 90210
+            <br>Azienda Agricola Bosco Merrone
+            <br>C.da Fienile snc
+            <br>82030 Frasso Telesino Benevento
             <br>
           </address>
           <address>
