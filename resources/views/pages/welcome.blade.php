@@ -1,6 +1,10 @@
 @extends('main')
-
+@section('title','Benvenuto')
 @section('content')
+
+  @foreach ($posts as $post)
+
+
     <!-- Header with Background Image -->
     <header class="business-header">
       <div class="container-fluid">
@@ -16,8 +20,8 @@
      <div class="container">
       <div class="row">
         <div class="col-sm-8">
-          <h2 class="mt-4">Cosa Facciamo</h2>
-          <p>Ti offriamo la possibilità di una esperienza unica nel ritrovare il contatto con la (tua ) vera natura , spegnendo il telefono , disdicendo tutti i tuoi impegni ,vieni a sognare senza andare troppo lontano, ti offriamo lo spettacolo più straordinario a pochi chilometri di distanza dal famoso borgo medievale di Sant’Agata dei Goti  in provincia di Benevento a soli 47 km da Napoli ,25 da Caserta , 30 da Benevento ,40 da Avellino,   lo spettacolo più straordinario ti aspetta e vedrai che ritornerai a meravigliarti,adottando la tua gallina e coltivando il tuo orto,condividerai  e farai l’esperienza del vero incontro.</p>
+          <h2 class="mt-4">{{$post->title}}</h2>
+          <p>{{$post->body}}</p>
           <p>
             <a class="btn btn-primary btn-lg" href="#">Call to Action &raquo;</a>
           </p>
@@ -40,14 +44,13 @@
         </div>
       </div>
       <!-- /.row -->
-
       <div class="row">
         <div class="col-sm-4 my-4">
           <div class="card">
-            <img class="card-img-top" src="http://placehold.it/300x200" alt="">
+            <img class="card-img-top" src="images/cooking.jpg" alt="">
             <div class="card-body">
-              <h4 class="card-title">Card title</h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus.</p>
+              <h4 class="card-title">{{$post->card_title1}}</h4>
+              <p class="card-text">{{$post->card_body1}}</p>
             </div>
             <div class="card-footer">
               <a href="#" class="btn btn-block btn-primary">Find Out More!</a>
@@ -56,10 +59,10 @@
         </div>
         <div class="col-sm-4 my-4">
           <div class="card">
-            <img class="card-img-top" src="http://placehold.it/300x200" alt="">
+            <img class="card-img-top" src="images/view.jpg" alt="">
             <div class="card-body">
-              <h4 class="card-title">Card title</h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus totam ut praesentium aut.</p>
+              <h4 class="card-title">{{$post->card_title2}}</h4>
+              <p class="card-text">{{$post->card_body2}}</p>
             </div>
             <div class="card-footer">
               <a href="#" class="btn btn-block btn-primary">Find Out More!</a>
@@ -68,18 +71,21 @@
         </div>
         <div class="col-sm-4 my-4">
           <div class="card">
-            <img class="card-img-top" src="http://placehold.it/300x200" alt="">
+            <img class="card-img-top" src="images/rooms.jpg" alt="">
             <div class="card-body">
-              <h4 class="card-title">Card title</h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+              <h4 class="card-title">{{$post->card_title3}}</h4>
+              <p class="card-text">{{$post->card_body3}}</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-block btn-primary">Find Out More!</a>
+              <a href="#" class="btn btn-block btn-primary">Find Out More</a>
             </div>
           </div>
         </div>
         </div>
         </div>
+        @endforeach
+
 
       <!-- /.row -->
+
 @stop
