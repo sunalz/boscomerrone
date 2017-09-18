@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 use App\Post;
+use App\Image;
 use App\Http\Requests;
 use Mail;
 class PagesController extends Controller
 {
     public function getIndex(){
       $posts = Post::with('images')->get();
+
       return view('pages.welcome')->withPosts($posts);
 
     }

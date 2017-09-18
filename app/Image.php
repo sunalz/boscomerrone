@@ -9,6 +9,6 @@ class Image extends Model
     protected $table = 'images';
 
     public function posts(){
-        return $this->hasMany('App\Post');
+        return $this->belongsTo(Post::class);
     }
 }

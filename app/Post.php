@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+  protected $table = 'posts';
     public function images(){
-    return $this->belongsTo('App\Image');
+
+    return $this->hasMany(Image::class);
 }
 }

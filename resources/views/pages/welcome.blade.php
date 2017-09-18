@@ -3,6 +3,8 @@
 @section('content')
 
   @foreach ($posts as $post)
+    @foreach ($post->images as $img)
+
 
 
     <!-- Header with Background Image -->
@@ -83,6 +85,8 @@
         </div>
         </div>
         </div>
+
+          @endforeach
         @endforeach
 
 
