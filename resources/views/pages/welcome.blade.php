@@ -52,7 +52,8 @@
             <img class="card-img-top" src="/storage/images/homepage/{{$img->photo1}}" width="300" height="200" alt="">
             <div class="card-body">
               <h4 class="card-title">{{$post->card_title1}}</h4>
-              <p class="card-text">{{$post->card_body1}}</p>
+              <hr>
+              <textarea disabled="disabled" style="height:300px; background-color:white" class="card-text">{{$post->card_body1}}</textarea>
             </div>
             <div class="card-footer">
               <a href="#" class="btn btn-block btn-primary">Find Out More!</a>
@@ -64,7 +65,8 @@
             <img class="card-img-top" src="/storage/images/homepage/{{$img->photo2}}" alt="">
             <div class="card-body">
               <h4 class="card-title">{{$post->card_title2}}</h4>
-              <p class="card-text">{{$post->card_body2}}</p>
+              <hr>
+              <textarea disabled="disabled" style="height:300px; background-color:white" class="card-text">{{$post->card_body2}}</textarea>
             </div>
             <div class="card-footer">
               <a href="#" class="btn btn-block btn-primary">Find Out More!</a>
@@ -76,7 +78,8 @@
             <img class="card-img-top" src="/storage/images/homepage/{{$img->photo3}}" alt="">
             <div class="card-body">
               <h4 class="card-title">{{$post->card_title3}}</h4>
-              <p class="card-text">{{$post->card_body3}}</p>
+              <hr>
+              <textarea disabled="disabled" style="height:300px; background-color:white" class="card-text">{{$post->card_body3}}</textarea>
             </div>
             <div class="card-footer">
               <a href="#" class="btn btn-block btn-primary">Find Out More</a>

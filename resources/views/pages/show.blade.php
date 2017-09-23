@@ -4,7 +4,7 @@
 <br><br><br>
 <!-- Main jumbotron for a primary marketing message or call to action -->
 
-    <div class="jumbotron">
+    <div id="jumbo" class="jumbotron">
       <div class="container">
         <div class="row">
           <div class="col-md-9">
@@ -69,6 +69,6 @@
       </div>
       {!!Form::close()!!}
       @endforeach
-    
+
 
 @endsection
