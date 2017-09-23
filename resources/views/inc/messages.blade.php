@@ -1,7 +1,7 @@
 
 @if(count($errors)>0)
   @foreach ($errors->all() as $error)
-    <div class="alert alert-warning alert-dismissible fade show fixed-bottom" role="alert">
+    <div id="flash" class="alert alert-warning alert-dismissible fade show fixed-top" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
       </button>
@@ -13,7 +13,7 @@
 @endif
 
 @if (session('success'))
-  <div class="alert alert-success alert-dismissible fade show fixed-bottom" role="alert">
+  <div id="flash" class="alert alert-success alert-dismissible fade show fixed-top" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -22,7 +22,7 @@
 @endif
 
 @if (session('error'))
-  <div class="alert alert-warning alert-dismissible fade show fixed-bottom" role="alert">
+  <div id="flash" class="alert alert-warning alert-dismissible fade show fixed-top" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>

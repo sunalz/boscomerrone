@@ -49,7 +49,7 @@
 
         <div class="col-sm-4 my-4">
           <div class="card">
-            <img class="card-img-top" src="images/cooking.jpg" alt="">
+            <img class="card-img-top" src="/storage/images/homepage/{{$img->photo1}}" width="300" height="200" alt="">
             <div class="card-body">
               <h4 class="card-title">{{$post->card_title1}}</h4>
               <p class="card-text">{{$post->card_body1}}</p>
@@ -61,7 +61,7 @@
         </div>
         <div class="col-sm-4 my-4">
           <div class="card">
-            <img class="card-img-top" src="images/view.jpg" alt="">
+            <img class="card-img-top" src="/storage/images/homepage/{{$img->photo2}}" alt="">
             <div class="card-body">
               <h4 class="card-title">{{$post->card_title2}}</h4>
               <p class="card-text">{{$post->card_body2}}</p>
@@ -73,7 +73,7 @@
         </div>
         <div class="col-sm-4 my-4">
           <div class="card">
-            <img class="card-img-top" src="images/rooms.jpg" alt="">
+            <img class="card-img-top" src="/storage/images/homepage/{{$img->photo3}}" alt="">
             <div class="card-body">
               <h4 class="card-title">{{$post->card_title3}}</h4>
               <p class="card-text">{{$post->card_body3}}</p>
@@ -85,7 +85,6 @@
         </div>
         </div>
         </div>
-
           @endforeach
         @endforeach
 

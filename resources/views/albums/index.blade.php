@@ -9,6 +9,8 @@
        <div class="col-md-3 float-left"></div>
        	<div id="contactform" class="card border-primary mb-3 col-md-6" style="padding:10px; margin: 50px; box-shadow: 5px 10px 80px;">
        	<h1 class="text-center" style="font-family: 'Coca cola ii', cursive; font-size: 60px; text-shadow: 1px 0px 20px;">Galleria!</h1>
+        <a href="/create" class="btn btn-outline-primary btn-block">Crea Un Nuovo Album</a>
+        <br>
          <div id="albums" class="container">
 
            <div class="row text-center">
@@ -42,7 +44,14 @@
 
          </div>
        @else
-         <p>No Albums to Display</p>
+         <br>
+         <h1 class="text-center">No Albums to Display!</h1>
+         <div class="container text-center">
+           <br>
+           <a href="/create" class="btn btn-outline-primary ">Crea Un Nuovo Album?</a>
+         </div>
+
        @endif
        	</div>
+
 @endsection
