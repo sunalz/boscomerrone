@@ -12,8 +12,8 @@
 */
 
 Route::get('/', 'PagesController@getIndex');
-Route::get('contact', 'PagesController@getContact');
-Route::post('contact', 'PagesController@postContact');
+Route::get('/contact', 'PagesController@getContact');
+Route::post('/contact', 'PagesController@postContact');
 
 Route::get('albums', 'AlbumsController@index');
 Route::get('/albums/{id}', 'AlbumsController@show');
@@ -26,3 +26,5 @@ Route::get('/photos/{id}', 'PhotosController@show');
 Route::delete('/photos/{id}', 'PhotosController@destroy');
 
 Route::resource('posts', 'PostController');
+Route::get('/editor', 'PostController@index');
+Route::get('/post/{id}', 'PostController@show');

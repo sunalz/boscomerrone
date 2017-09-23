@@ -9,8 +9,9 @@
         {{Form::text('name','',['placeholder' => 'Album Name', 'class' => 'form-control' ])}}
         {{Form::textarea('description','',['placeholder' => 'Album Description', 'class' => 'form-control' ])}}
         {{Form::file('cover_image')}}
-        {{Form::submit('submit')}}
+        {{Form::submit('Crea Album',['class'=>'btn btn-primary btn-block'])}}
+        <a href="/" class="btn btn-danger btn-block">Cancel</a>
       {!!Form::close()!!}
     	</div>
-
+ 
 @endsection

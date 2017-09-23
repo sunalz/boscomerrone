@@ -10,7 +10,8 @@
         {{Form::textarea('description','',['placeholder' => 'Photo Description', 'class' => 'form-control' ])}}
         {{Form::hidden('album_id', $album_id)}}
         {{Form::file('photo')}}
-        {{Form::submit('submit')}}
+        {{Form::submit('Carica la Foto',['class'=>'btn btn-primary btn-block'])}}
+        <a href="/albums/{{$album_id}}" class="btn btn-danger btn-block">Cancel</a>
       {!!Form::close()!!}
     	</div>
 

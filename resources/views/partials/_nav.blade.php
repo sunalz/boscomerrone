@@ -9,7 +9,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="albums">Gallery
+              <a class="nav-link" href="/albums">Gallery
                 <span class="sr-only">(current)</span>
               </a>
             </li>
@@ -17,10 +17,10 @@
               <a class="nav-link" href="/create">Create Album</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
+              <a class="nav-link" href="/post/1">Editor</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact">Contact</a>
+              <a class="nav-link" href="/contact">Contact</a>
             </li>
           </ul>
         </div>

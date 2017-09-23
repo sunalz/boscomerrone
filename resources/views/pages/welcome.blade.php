@@ -24,9 +24,6 @@
         <div class="col-sm-8">
           <h2 class="mt-4">{{$post->title}}</h2>
           <p>{{$post->body}}</p>
-          <p>
-            <a class="btn btn-primary btn-lg" href="#">Call to Action &raquo;</a>
-          </p>
         </div>
         <div class="col-sm-4" style="box-shadow: 0px 0px 20px #000">
           <h2 class="mt-4">Contattaci</h2>
@@ -46,7 +43,10 @@
         </div>
       </div>
       <!-- /.row -->
+      <h1 style="font-family:'Coca cola ii', cursive; font-size:50px;">Eventi</h1>
+      <hr>
       <div class="row">
+
         <div class="col-sm-4 my-4">
           <div class="card">
             <img class="card-img-top" src="images/cooking.jpg" alt="">
