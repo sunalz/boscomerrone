@@ -26,7 +26,7 @@ class PagesController extends Controller
 
       $this->validate($request, [
         'email' =>'required|email',
-        'message' => 'min:10']);
+        'message' => 'min:1']);
 
 $data = array(
     'email' => $request->email,
@@ -38,11 +38,11 @@ $data = array(
       Mail::send('emails.contact', $data, function($message) use ($data){
         $message->from($data['email']);
         $message->subject($data['subject']);
-        $message->to('fernandosunal@gmail.com');
+        $message->to('info@boscomerrone.ml');
 
 
       } );
-
+      return redirect('/contact')->with('success','Message Sent!');
     }
 
 

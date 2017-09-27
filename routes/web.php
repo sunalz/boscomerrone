@@ -29,3 +29,7 @@ Route::delete('/albums/{id}', 'AlbumsController@destroy');
 Route::resource('posts', 'PostController');
 Route::get('/editor', 'PostController@index');
 Route::get('/post/{id}', 'PostController@show');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

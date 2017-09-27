@@ -32,10 +32,10 @@
             <br>Azienda Agricola Bosco Merrone
             <br>C.da Fienile snc
             <br>82030 Frasso Telesino Benevento
-            <br>
+            <br><a href="#map">Check the Map</a>
           </address>
+        
           <address>
-
             <label class="disabled" for="disabledTextInput">Cellulare: 339 4997878</label>
             <br>
             <a class="btn btn-primary" href="contact">Email Me</a>
@@ -53,7 +53,7 @@
             <div class="card-body">
               <h4 class="card-title">{{$post->card_title1}}</h4>
               <hr>
-              <textarea disabled="disabled" style="height:300px; background-color:white" class="card-text">{{$post->card_body1}}</textarea>
+              <textarea disabled="disabled" style="height:200px; background-color:white" class="card-text">{{$post->card_body1}}</textarea>
             </div>
             <div class="card-footer">
               <a href="#" class="btn btn-block btn-primary">Find Out More!</a>
@@ -66,7 +66,7 @@
             <div class="card-body">
               <h4 class="card-title">{{$post->card_title2}}</h4>
               <hr>
-              <textarea disabled="disabled" style="height:300px; background-color:white" class="card-text">{{$post->card_body2}}</textarea>
+              <textarea disabled="disabled" style="height:200px; background-color:white" class="card-text">{{$post->card_body2}}</textarea>
             </div>
             <div class="card-footer">
               <a href="#" class="btn btn-block btn-primary">Find Out More!</a>
@@ -75,11 +75,11 @@
         </div>
         <div class="col-sm-4 my-4">
           <div class="card">
-            <img class="card-img-top" src="/storage/images/homepage/{{$img->photo3}}" alt="">
+            <img class="card-img-top rounded" src="/storage/images/homepage/{{$img->photo3}}" alt="">
             <div class="card-body">
               <h4 class="card-title">{{$post->card_title3}}</h4>
               <hr>
-              <textarea disabled="disabled" style="height:300px; background-color:white" class="card-text">{{$post->card_body3}}</textarea>
+              <textarea disabled="disabled" style="height:200px; background-color:white" class="card-text">{{$post->card_body3}}</textarea>
             </div>
             <div class="card-footer">
               <a href="#" class="btn btn-block btn-primary">Find Out More</a>
@@ -90,7 +90,8 @@
         </div>
           @endforeach
         @endforeach
-
+        <div id="map"></div>
+        <br>
 
       <!-- /.row -->
 

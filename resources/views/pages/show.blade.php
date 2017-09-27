@@ -1,4 +1,4 @@
-@extends('main');
+@extends('main')
 @section('title','Editor')
 @section('content')
 <br><br><br>
