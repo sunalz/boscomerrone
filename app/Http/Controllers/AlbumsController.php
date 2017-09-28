@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Album;
 use Storage;
-
+use App\Photo;
 class AlbumsController extends Controller
 {
    public function index(){
@@ -21,7 +21,7 @@ class AlbumsController extends Controller
    public function store(Request $request){
      $this->validate($request,[
        'name' => 'required',
-       'cover_image' => 'image|max:1999'
+       'cover_image' => 'image|max:10000'
 
 
      ]);
@@ -53,9 +53,12 @@ class AlbumsController extends Controller
    }
 
    public function destroy($id){
-     $album = Album::find($id);
+     $album = Album::with('photos')->find($id);
      if(storage::delete('public/album_covers/'.$album->cover_image)){
        $album->delete();
+       foreach ($album->photos as $photo) {
+         $photo->delete();
+       }
        Storage::deleteDirectory('public/photos/'. $album->id);
 
        return redirect('/albums')->with('success','Album Deleted');

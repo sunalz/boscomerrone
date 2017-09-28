@@ -12,8 +12,8 @@
       <div class="container-fluid">
         <div class="row" >
           <div class="col-lg-12">
-            <h1 class="display-3 text-center mt-4" style="color: #ffcc00; font-size: 100px; text-shadow:1px 1px 50px; font-family: 'Coca Cola ii', cursive; ">Bosco Merrone</h1>
-            <p class="display-3 text-center mt-1" style="color: #ffcc00; font-size: 50px; text-shadow:1px 1px 50px; font-family: 'Coca Cola ii', cursive; padding:0; margin: 0; ">Nuova Gestione</p>
+            <h1 class="display-3 text-center mt-4" style="color: #ffcc00; font-size: 135px; font-family: 'Coca Cola ii', cursive; ">Bosco Merrone</h1>
+            <p class="display-3 text-center mt-1" style="color: #ffcc00; font-size: 60px; font-family: 'Coca Cola ii', cursive; padding:0; margin: 0; ">Nuova Gestione</p>
           </div>
         </div>
       </div>
@@ -34,7 +34,7 @@
             <br>82030 Frasso Telesino Benevento
             <br><a href="#map">Check the Map</a>
           </address>
-
+        
           <address>
             <label class="disabled" for="disabledTextInput">Cellulare: 339 4997878</label>
             <br>

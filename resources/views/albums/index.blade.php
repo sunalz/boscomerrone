@@ -30,7 +30,7 @@
                    @else
                      <div class='medium-4 columns'>
                        <a href="albums/{{$album->id}}">
-                         <img style="width:300px; height:150px;" class="thumbnail" src="storage/album_covers/{{$album->cover_image}}" alt="{{$album->name}}">
+                         <img style="width:300px; height:150px; " class="thumbnail" src="storage/album_covers/{{$album->cover_image}}" alt="{{$album->name}}">
                        </a>
                        <br>
                        <h4>{{$album->name}}</h4>
@@ -44,13 +44,25 @@
                  <?php $i++; ?>
 
              @endforeach
-
+                @if (Auth::check())
+                    <a href="/create"><img src="images/add_image.png" style="width:150px; height:150px; margin-left:30px;" alt="add image"></a>
+                @endif
            </div>
 
          </div>
        @else
          <br>
          <h1 class="text-center">No Albums to Display!</h1>
+         @if (Auth::check())
+           <div class="text-center">
+              <a href="/create" class="btn btn-outline-primary ">Crea Un Nuovo Album?</a>
+           </div>
+
+           @else
+               <div class="text-center">
+                 <a href="login" class="btn btn-outline-primary">Login To Create An Album?</a>
+               </div>
+         @endif
        @endif
        	</div>
 

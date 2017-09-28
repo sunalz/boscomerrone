@@ -7,7 +7,9 @@
       <h1 class="text-center text-capitalize" style="font-family: 'Coca cola ii', cursive; font-size: 60px; text-shadow: 1px 0px 20px;">{{$album->name}}</h1>
 
       <br>
-      <a href="/photos/create/{{$album->id}}" class="btn btn-outline-primary btn-block">Upload photo To album</a>
+      @if (Auth::check())
+        <a href="/photos/create/{{$album->id}}" class="btn btn-outline-primary btn-block">Upload photo To album</a>
+      @endif
       <a href="/albums" class="btn btn-outline-warning btn-block ">Go Back</a>
       <hr>
       @if (count($album->photos)> 0)
@@ -53,10 +55,13 @@
            <h1 class="text-center">No Photos to Display!</h1>
          @endif
          <hr>
+         @if (Auth::check())
          {!!Form::open(['action' => ['AlbumsController@destroy',$album->id],'method' =>'POST'])!!}
            {{Form::hidden('_method' , 'DELETE')}}
            {{Form::submit("Delete Album?",['class' => 'btn btn-danger btn-block text-capitalize'])}}
          {!!Form::close()!!}
+         @endif
+
           </div>
 
 

@@ -11,10 +11,13 @@
   <img src="/storage/photos/{{$photo->album_id}}/{{$photo->photo}}" alt="{{$photo->title}}">
   <strong><small>Size: {{$photo->size}}</small></strong>
   <br><br>
-  {!!Form::open(['action' => ['PhotosController@destroy',$photo->id],'method' =>'POST'])!!}
-    {{Form::hidden('_method' , 'DELETE')}}
-    {{Form::submit('Delete Photo',['class' => 'btn btn-danger btn-block'])}}
-  {!!Form::close()!!}
+  @if (Auth::check())
+    {!!Form::open(['action' => ['PhotosController@destroy',$photo->id],'method' =>'POST'])!!}
+      {{Form::hidden('_method' , 'DELETE')}}
+      {{Form::submit('Delete Photo',['class' => 'btn btn-danger btn-block'])}}
+    {!!Form::close()!!}
+  @endif
+
   <hr>
 
   </div>

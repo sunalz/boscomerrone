@@ -17,7 +17,7 @@ class PhotosController extends Controller
 
       $this->validate($request,[
         'title' => 'required',
-        'photo' => 'image|max:1999'
+        'photo' => 'image|max:10000'
 
 
       ]);
@@ -31,20 +31,23 @@ class PhotosController extends Controller
 
       $path = $request->file('photo')->storeAs('public/photos/'.$request->input('album_id'), $filenameToStore);
 
+
+
       //upload photo
 
       $photo = new Photo;
-      $photo->album_id = $request->input('album_id');
-      $photo->title= $request->input('title');
-      $photo->description= $request->input('description');
-      $photo->size = $request->file('photo')->getClientSize();
-      $photo->photo= $filenameToStore;
+        $photo->album_id = $request->input('album_id');
+        $photo->title= $request->input('title');
+        $photo->description= $request->input('description');
+        $photo->size = $request->file('photo')->getClientSize();
+        $photo->photo= $filenameToStore;
 
-      $photo->save();
-      return redirect('/albums/'.$request->input('album_id'))->with('success','Photo Uploaded!');
+        $photo->save();
+        return redirect('/albums/'.$request->input('album_id'))->with('success','Photo Uploaded!');
 
 
     }
+
 
     public function show($id){
 
@@ -58,7 +61,7 @@ class PhotosController extends Controller
         $photos->delete();
 
 
-        return redirect('/albums')->with('success','Photo Deleted');
+        return redirect('/albums/' . $photos->album_id)->with('success','Photo Deleted');
 
 
       }
