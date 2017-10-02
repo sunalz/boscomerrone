@@ -21,3 +21,7 @@ body {
 .card {
     height: 100%;
 }
+.btn-close{
+  position:absolute;
+
+}

@@ -22,18 +22,44 @@
              @foreach ($albums as $album)
                @if ($i == $colcount)
                  <div class='medium-4 columns end'>
+                      @if (Auth::check())
+                   <a style="position:absolute;">
+
+                     {!!Form::open(['action' => ['AlbumsController@destroy',$album->id],'method' =>'POST'])!!}
+                       {{Form::hidden('_method' , 'DELETE')}}
+                       {{Form::submit(" &times;",['class' => 'close btn btn-outline-light'])}}
+                     {!!Form::close()!!}
+
+                   </a>
+                   @endif
                    <a href="albums/{{$album->id}}">
                      <img style="width:300px; height:150px;" class="thumbnail" src="storage/album_covers/{{$album->cover_image}}" alt="{{$album->name}}">
                    </a>
+
                    <br>
-                   <h4>{{$album->name}}</h4>
+                   <h4 class="text-capitalize text-center">{{$album->name}}
+
+                   </h4>
+
                    @else
                      <div class='medium-4 columns'>
+                       @if (Auth::check())
+                    <a style="position:absolute;">
+
+                      {!!Form::open(['action' => ['AlbumsController@destroy',$album->id],'method' =>'POST'])!!}
+                        {{Form::hidden('_method' , 'DELETE')}}
+                        {{Form::submit(" &times;",['class' => 'close btn btn-outline-light'])}}
+                      {!!Form::close()!!}
+
+                    </a>
+                    @endif
+                    
+
                        <a href="albums/{{$album->id}}">
                          <img style="width:300px; height:150px; " class="thumbnail" src="storage/album_covers/{{$album->cover_image}}" alt="{{$album->name}}">
                        </a>
                        <br>
-                       <h4>{{$album->name}}</h4>
+                       <h4 class="text-capitalize text-center">{{$album->name}}</h4>
                      @endif
                      @if ($i % 3 ==0)
                      </div></div><div class="row text-center">
