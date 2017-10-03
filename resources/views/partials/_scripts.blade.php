@@ -6,13 +6,21 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/min/dropzone.min.js" integrity="sha256-0dCrNKhVyiX4bBpScyU5PT/iZpxzlxjn2oyaR7GQutE=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/dropzone.js" integrity="sha256-Xb32jEsNZ5ojqwCeQBgl/4fMDIUCO9Sdws7xiMT3TaQ=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../jquery-ui-1.12.1/external/jquery/jquery.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../timepicker/jquery.timepicker.min.js"></script>
+    <script type="text/javascript" src="../timepicker/jquery.timepicker.js"></script>
+    <script type="text/javascript">
+      $("#start-date").datepicker();
+      $("#end-date").datepicker();
+      $('#start-at').timepicker();
+      $('#end-at').timepicker();
+    </script>
       <script>
     $(document).ready(function(){
       $("#flash").fadeOut(2500);
 });
 
-</script>
-    <script>
       function initMap() {
         var uluru = {lat: 41.142752, lng: 14.499017};
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -25,6 +33,7 @@
         });
       }
     </script>
+
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCU1zT_CKKaIyO9yQAcRFFFpvvRKpb9XI&callback=initMap">
     </script>

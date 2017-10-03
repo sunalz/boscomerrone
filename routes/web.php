@@ -17,10 +17,10 @@ Route::post('/contact', 'PagesController@postContact');
 
 Route::get('albums', 'AlbumsController@index');
 Route::get('/albums/{id}', 'AlbumsController@show');
-Route::get('/create', 'AlbumsController@create');
+Route::get('/create', 'AlbumsController@create')->middleware('auth');
 Route::post('/albums/store', ['as' => 'album-store', 'uses' => 'AlbumsController@store']);
 
-Route::get('/photos/create/{id}', 'PhotosController@create');
+Route::get('/photos/create/{id}', 'PhotosController@create')->middleware('auth');
 Route::post('photos/store', 'PhotosController@store');
 Route::get('/photos/{id}', 'PhotosController@show');
 Route::delete('/photos/{id}', 'PhotosController@destroy');
@@ -33,3 +33,18 @@ Route::get('/post/{id}', 'PostController@show');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//events
+
+Route::resource('events', 'EventController');
+Route::resource('eventphotos', 'EventphotosController');
+Route::get('/events', 'EventController@index');
+Route::get('/events/create','EventController@create')->middleware('auth');
+Route::post('/events/store', ['as' => 'create-event', 'uses' => 'EventController@store']);
+Route::get('/events/{id}', ['as' =>'event', 'uses' => 'EventController@show']);
+
+//photo upload
+
+Route::post('/eventphotos/store', ['as' => 'photo-upload', 'uses' => 'EventphotosController@store']);
+Route::get('/events/photoupload/create' , 'EventphotosController@create')->middleware('auth');
+Route::get('/events/photoupload/photos', 'EventphotosController@index');

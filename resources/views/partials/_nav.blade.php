@@ -14,6 +14,9 @@
          <li class="{{Request::is('contact') ? "active nav-item" : "nav-item"}}">
            <a class="nav-link" href="/contact">Contattaci</a>
          </li>
+         <li class="{{Request::is('events') ? "active nav-item" : "nav-item"}}">
+           <a class="nav-link" href="/events">Eventi</a>
+         </li>
          @if (Auth::check())
 
        </ul>
@@ -28,6 +31,9 @@
           </li>
           <li class="nav-item" style="padding-right:20px; padding-left:10px;">
             <a class="btn btn-light btn-block text-left" href="/post/1">Editor</a>
+          </li>
+          <li class="nav-item" style="padding-right:20px; padding-left:10px;">
+            <a class="btn btn-light btn-block text-left" href="/events/create">Create Event</a>
           </li>
           <li class="nav-item" style="padding-right:20px; padding-left:10px;">
             <a class="btn btn-danger btn-block text-left" href="{{ route('logout') }}"
