@@ -19,7 +19,11 @@
      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
      <style media="screen">
        body{
-         background:url(../images/background.jpg);
+         background:url(/images/background.jpg);
+       }
+       .coca{
+         font-family: "Coca Cola ii" , cursive;
+
        }
        .thumbs{
          object-fit:cover;
@@ -59,5 +63,22 @@
         }
         @font-face {font-family:"Coca Cola ii";src:url("../font/cocacolaii.eot?") format("eot"),url("../font/cocacolaii.woff") format("woff"),url("../font/cocacolaii.ttf") format("truetype"),url("../font/cocacolaii.svg#CocaColaii") format("svg");
         font-weight:normal;font-style:normal;}
+        .container {
+    position: relative;
+}
+
+.topright {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    font-size: 20px;
+
+}
+.pointer{cursor:pointer}
+
+img {
+    width: 100%;
+    height: auto;
+}
      </style>
   </head>

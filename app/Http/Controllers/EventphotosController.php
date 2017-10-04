@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Eventpost;
 use App\Eventphoto;
+use Storage;
 class EventphotosController extends Controller
 {
     /**
@@ -60,7 +61,9 @@ class EventphotosController extends Controller
      */
     public function show($id)
     {
-        //
+      $posts = Eventpost::with('eventphotos')->find($id);
+      return view('events.photoupload.show')->with('posts', $posts);
+
     }
 
     /**
@@ -71,7 +74,7 @@ class EventphotosController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -94,6 +97,12 @@ class EventphotosController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $photos = Eventphoto::find($id);
+      if(storage::delete('public/events/'.$photos->eventpost_id.'/'.$photos->name)){
+        $photos->delete();
+        return redirect('/event/photos/'.$photos->eventpost_id)->with('success','Photo Deleted');
+
+      }
+
     }
 }

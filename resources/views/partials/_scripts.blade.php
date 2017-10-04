@@ -13,8 +13,8 @@
     <script type="text/javascript">
       $("#start-date").datepicker();
       $("#end-date").datepicker();
-      $('#start-at').timepicker();
-      $('#end-at').timepicker();
+      $("#start-at").timepicker();
+      $("#end-at").timepicker();
     </script>
       <script>
     $(document).ready(function(){

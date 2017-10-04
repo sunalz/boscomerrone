@@ -32,7 +32,6 @@
             <br>Azienda Agricola Bosco Merrone
             <br>C.da Fienile snc
             <br>82030 Frasso Telesino Benevento
-            <br><a href="#map">Check the Map</a>
           </address>
 
           <address>
@@ -42,52 +41,9 @@
           </address>
         </div>
       </div>
+      <br>
       <!-- /.row -->
-      <h1 style="font-family:'Coca cola ii', cursive; font-size:50px;">Eventi</h1>
-      <hr>
-      <div class="row">
 
-        <div class="col-sm-4 my-4">
-          <div class="card">
-            <img class="card-img-top" src="/storage/images/homepage/{{$img->photo1}}" width="300" height="200" alt="">
-            <div class="card-body">
-              <h4 class="card-title">{{$post->card_title1}}</h4>
-              <hr>
-              <textarea disabled="disabled" style="height:200px; background-color:white" class="card-text">{{$post->card_body1}}</textarea>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-block btn-primary">Find Out More!</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4 my-4">
-          <div class="card">
-            <img class="card-img-top" src="/storage/images/homepage/{{$img->photo2}}" alt="">
-            <div class="card-body">
-              <h4 class="card-title">{{$post->card_title2}}</h4>
-              <hr>
-              <textarea disabled="disabled" style="height:200px; background-color:white" class="card-text">{{$post->card_body2}}</textarea>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-block btn-primary">Find Out More!</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4 my-4">
-          <div class="card">
-            <img class="card-img-top rounded" src="/storage/images/homepage/{{$img->photo3}}" alt="">
-            <div class="card-body">
-              <h4 class="card-title">{{$post->card_title3}}</h4>
-              <hr>
-              <textarea disabled="disabled" style="height:200px; background-color:white" class="card-text">{{$post->card_body3}}</textarea>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-block btn-primary">Find Out More</a>
-            </div>
-          </div>
-        </div>
-        </div>
-        </div>
           @endforeach
         @endforeach
         <div id="map"></div>

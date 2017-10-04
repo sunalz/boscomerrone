@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Eventpost;
 use App\Eventphoto;
+use Storage;
 class EventController extends Controller
 {
     /**
@@ -41,8 +42,8 @@ class EventController extends Controller
         'file' => 'image|max:10000',
         'title'=> 'required',
         'description' => 'required|min:5',
-        'price' => 'required',
-        'guests' => 'required',
+        'price' => 'required|numeric',
+        'guests' => 'required|numeric',
         'start_date' => 'required',
         'end_date' => 'required',
         'start_at' => 'required',
@@ -76,8 +77,6 @@ class EventController extends Controller
      $photos = Eventpost::with('eventphotos')->find($id);
      return view('events.show')->with('photos',$photos);
 
-
-
     }
 
     /**
@@ -88,7 +87,8 @@ class EventController extends Controller
      */
     public function edit($id)
     {
-        //
+      $post = Eventpost::find($id);
+      return view('events.edit')->with('post', $post);
     }
 
     /**
@@ -100,7 +100,32 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $this->validate($request,[
+        'file' => 'image|max:10000',
+        'title'=> 'required',
+        'description' => 'required|min:5',
+        'price' => 'required|numeric',
+        'guests' => 'required|numeric',
+        'start_date' => 'required',
+        'end_date' => 'required',
+        'start_at' => 'required',
+        'end_at' => 'required'
+      ]);
+
+      $post = Eventpost::find($id);
+      $post->title = $request->input('title');
+      $post->description = $request->input('description');
+      $post->guests = $request->input('guests');
+      $post->price = $request->input('price');
+      $post->start_date = $request->input('start_date');
+      $post->end_date = $request->input('end_date');
+      $post->start_at = $request->input('start_at');
+      $post->end_at = $request->input('end_at');
+      $post->save();
+      $event_id = $post->id;
+      return view('/events/photoupload/create')->with('event_id', $event_id);
+
+
     }
 
     /**
@@ -111,6 +136,15 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $post = Eventpost::with('eventphotos')->find($id);
+      if($post->delete()){
+        foreach ($post->eventphotos as $photo) {
+          $photo->delete();
+          Storage::deleteDirectory('public/events/'. $post->id);
+        }
+        return redirect('/events')->with('success','Event Deleted');
+
+
+      }
     }
 }

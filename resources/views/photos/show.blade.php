@@ -8,7 +8,7 @@
   <a class="btn btn-success" href="/albums/{{$photo->album_id}}"><< Back to Album</a>
   <hr>
   <p class="text-capitalize">{{$photo->description}}</p>
-  <img src="/storage/photos/{{$photo->album_id}}/{{$photo->photo}}" alt="{{$photo->title}}">
+  <img class="img-thumbnail thumbs" src="/storage/photos/{{$photo->album_id}}/{{$photo->photo}}" alt="{{$photo->title}}">
   <strong><small>Size: {{$photo->size}}</small></strong>
   <br><br>
   @if (Auth::check())

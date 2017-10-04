@@ -42,7 +42,7 @@
      {{Form::text('start_at','',['placeholder' => 'Start at?', 'class' => 'form-control', 'id' =>'start-at' ])}}
 
     </div> <div class="form-group col-md-2">
-       {{Form::text('end_at','',['placeholder' => 'End at?', 'class' => 'form-control', 'id' =>'end-at' ])}}
+       {{Form::text('end_at','',['placeholder' => 'End at?', 'class' => 'form-control' , 'id' =>'end-at' ])}}
      </div>
      <div class="form-group col-md-6">
        {{Form::submit('Post',['class' =>'btn btn-primary btn-block'])}}

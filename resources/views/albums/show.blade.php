@@ -26,14 +26,14 @@
                  @if ($i == $colcount)
                    <div class='medium-4 columns end'>
                      <a href="/photos/{{$photo->id}}">
-                       <img style="width:300px; height:150px;" class="thumbnail" src="/storage/photos/{{$photo->album_id}}/{{$photo->photo}}" alt="{{$photo->title}}">
+                       <img style="width:300px; height:150px;" class="img-thumbnail thumbs" src="/storage/photos/{{$photo->album_id}}/{{$photo->photo}}" alt="{{$photo->title}}">
                      </a>
                      <br>
                      <h4>{{$photo->title}}</h4>
                      @else
                        <div class='medium-4 columns'>
                          <a href="/photos/{{$photo->id}}">
-                           <img style="width:300px; height:150px;" class="thumbnail" src="/storage/photos/{{$photo->album_id}}/{{$photo->photo}}" alt="{{$photo->title}}">
+                           <img style="width:300px; height:150px;" class="img-thumbnail thumbs" src="/storage/photos/{{$photo->album_id}}/{{$photo->photo}}" alt="{{$photo->title}}">
                          </a>
                          <br>
                          <h4>{{$photo->title}}</h4>

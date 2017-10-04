@@ -27,13 +27,13 @@
 
                      {!!Form::open(['action' => ['AlbumsController@destroy',$album->id],'method' =>'POST'])!!}
                        {{Form::hidden('_method' , 'DELETE')}}
-                       {{Form::submit(" &times;",['class' => 'close btn btn-outline-light'])}}
+                       {{Form::submit(" &times;",['class' => 'close btn btn-outline-light pointer'])}}
                      {!!Form::close()!!}
 
                    </a>
                    @endif
                    <a href="albums/{{$album->id}}">
-                     <img style="width:300px; height:150px;" class="thumbnail" src="storage/album_covers/{{$album->cover_image}}" alt="{{$album->name}}">
+                     <img style="width:300px; height:150px;" class="thumbnail thumbs" src="storage/album_covers/{{$album->cover_image}}" alt="{{$album->name}}">
                    </a>
 
                    <br>
@@ -53,7 +53,7 @@
 
                     </a>
                     @endif
-                    
+
 
                        <a href="albums/{{$album->id}}">
                          <img style="width:300px; height:150px; " class="thumbnail" src="storage/album_covers/{{$album->cover_image}}" alt="{{$album->name}}">

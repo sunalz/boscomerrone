@@ -35,7 +35,7 @@
     <div class="col-sm-4 sidenav">
       <br>
       <div class="card text-white bg-warning mb-3" style="max-width: 40rem;">
-        <div class="card-header text-dark"><strong><h4>Event Info</h4></strong></div>
+        <div class="card-header text-dark"><strong><h4>Event Info <a class="float-right btn btn-info" href="/event/edit/{{$photos->id}}">Edit</a></h4></strong></div>
         <div class="card-body">
   <table  class="table-sm ">
   <tbody style="border:none;">

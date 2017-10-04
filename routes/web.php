@@ -46,5 +46,12 @@ Route::get('/events/{id}', ['as' =>'event', 'uses' => 'EventController@show']);
 //photo upload
 
 Route::post('/eventphotos/store', ['as' => 'photo-upload', 'uses' => 'EventphotosController@store']);
-Route::get('/events/photoupload/create' , 'EventphotosController@create')->middleware('auth');
-Route::get('/events/photoupload/photos', 'EventphotosController@index');
+Route::get('/events/photoupload/create/{event_id}' , 'EventphotosController@create')->middleware('auth');
+
+// edit events
+Route::get('/event/edit/{id}','EventController@edit')->middleware('auth');
+
+// event photos
+
+Route::get('/event/photos','EventphotosController@index')->middleware('auth');
+Route::get('/event/photos/{id}','EventphotosController@show');
