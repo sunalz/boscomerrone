@@ -55,3 +55,7 @@ Route::get('/event/edit/{id}','EventController@edit')->middleware('auth');
 
 Route::get('/event/photos','EventphotosController@index')->middleware('auth');
 Route::get('/event/photos/{id}','EventphotosController@show');
+
+//send Mail
+
+Route::post('events/{id}',['as' => 'sendmail', 'uses' => 'MailsController@sendmail']);

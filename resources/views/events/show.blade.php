@@ -65,7 +65,13 @@
     </tr>
     <tr>
       <td class="bg-warning">Vuoi Unirti?</td>
-      <td class="bg-warning"><a class="btn btn-success btn-block" href="#">Si!</a></td>
+      <td class="bg-warning">
+        {{Form::open(['action' => ['MailsController@sendmail',$photos->id], 'method' =>'POST'])}}
+        {{Form::text('email','',['placeholder' =>'Inserisci Indirizzo Email','class'=>'form-control'])}}
+        {{Form::submit('Si!',['class'=>'btn btn-success '])}}
+        {{Form::close()}}
+      </td>
+
     </tr>
 
   </tbody>

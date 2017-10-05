@@ -27,6 +27,7 @@
        }
        .thumbs{
          object-fit:cover;
+         object-position: center;
          margin: 5px;
        }
        .sliderimg{
@@ -66,6 +67,7 @@
         .container {
     position: relative;
 }
+
 
 .topright {
     position: absolute;
